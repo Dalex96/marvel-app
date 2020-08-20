@@ -9,7 +9,7 @@ class Header extends React.Component {
 	}
 
 	capValues = (e) =>{
-		if(e.target.value != ""){
+		if(e.target.value !== ""){
 			this.setState({
 				show : false
 			})
@@ -32,7 +32,7 @@ class Header extends React.Component {
 		      <ul className="nav-wrapper">
 	        	<a href="/">
 		        <li>
-		    		<img src="https://1000marcas.net/wp-content/uploads/2020/02/Logo-Marvel.png" width="70" 
+		    		<img alt="description of image" src="https://1000marcas.net/wp-content/uploads/2020/02/Logo-Marvel.png" width="70" 
 		    		style={{
 		    			marginTop: '12%', marginLeft:'10px', marginRight:'20px'
 

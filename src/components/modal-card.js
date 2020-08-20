@@ -16,7 +16,7 @@ class ModalCard extends React.Component {
 			  <div id="modal1" className="modal disableScroll">
 			    <div className="modal-content">
 			      <h5>Spider-Man
-				      <a className="modal-close">
+				      <a href="#" className="modal-close">
 				      	<i className="material-icons prefix" style={{position: 'relative', left:'70%', bottom: '25px'}}>close</i>
 				      </a>
 			      </h5>

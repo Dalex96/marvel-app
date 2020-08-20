@@ -20,7 +20,7 @@ class CardMarvel extends React.Component {
 					<a className="waves-light modal-trigger" href="#modal1">
 					<div className="card">
 						<div className="card-image">
-							<img src="https://mlm-s2-p.mlstatic.com/3652-MLM45677850_1313-O.jpg"/>
+							<img src="https://mlm-s2-p.mlstatic.com/3652-MLM45677850_1313-O.jpg" alt="description of image"/>
 							<span className="card-title" style={{ fontSize: '15px', fontWeight: 'bold'}}>
 								Name
 

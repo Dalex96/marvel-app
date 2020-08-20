@@ -9,7 +9,7 @@ class Description extends React.Component {
 				<div className="col s12 m12 12 marginContent">
 					<div className="card horizontal horizontal-description" style={{boxShadow: '0px 0px 0px black'}}>
 						<div className="card-image">
-							<img src="https://mlm-s2-p.mlstatic.com/3652-MLM45677850_1313-O.jpg"/>
+							<img alt="description of image" src="https://mlm-s2-p.mlstatic.com/3652-MLM45677850_1313-O.jpg"/>
 						</div>
 						<div className="card-stacked">
 							<div className="card-content">

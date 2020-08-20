@@ -8,7 +8,7 @@ class CardDescription extends React.Component {
 				<a href="/description" className="collection-item pulse">
 				<div className="card horizontal" style={{boxShadow: '0px 0px 0px black', margin:'5px'}}>
 					<div className="card-image">
-						<img src="https://mlm-s2-p.mlstatic.com/3652-MLM45677850_1313-O.jpg" height="110"/>
+						<img src="https://mlm-s2-p.mlstatic.com/3652-MLM45677850_1313-O.jpg" height="110" alt="description of image"/>
 					</div>
 					<div className="card-stacked">
 						<div className="card-content">
