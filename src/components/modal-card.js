@@ -5,6 +5,10 @@ import './style.css'
 
 class ModalCard extends React.Component {
 
+	state = {
+		load: true
+	}
+
 	componentDidMount(){
 		M.AutoInit()
 	}
@@ -12,21 +16,17 @@ class ModalCard extends React.Component {
 	render(){
 		return (
 			<div>
-
-			  <div id="modal1" className="modal disableScroll">
+			  <div id={`modal${this.props.modal}`} className="modal disableScroll">
 			    <div className="modal-content">
-			      <h5>Spider-Man
-				      <a href="#" className="modal-close">
-				      	<i className="material-icons prefix" style={{position: 'relative', left:'70%', bottom: '25px'}}>close</i>
+				      <a className="modal-close">
+				      	<i className="material-icons prefix" style={{position: 'absolute', left:'92%', bottom: '400px'}}>close</i>
 				      </a>
+			      <h5>{this.props.nameCharacter}
 			      </h5>
 			      <div className="row scrollhabilitado contentCard">
-			      	<CardDescription/>
-			      	<CardDescription/>
-			      	<CardDescription/>
-			      	<CardDescription/>
-			      	<CardDescription/>
-			      	<CardDescription/>
+					{
+						this.props.comics.map(comic => <CardDescription dataComic={comic} key={comic.id} idComic={comic.id}/>)
+					}			      
 			      </div>
 			    </div>
 			  </div>

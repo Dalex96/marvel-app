@@ -45,3 +45,8 @@ a { color: inherit; }
 }
 /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
 
+.descriptionComic{
+	font-size: 12px;
+	text-overflow: ellipsis;
+	overflow: hidden;	
+}
