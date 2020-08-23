@@ -3,23 +3,22 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk';
 import rootReducer from "./store/reducers";
-import Router from './router'
 import './App.css';
-import Header from './layout/header'
+import Main from './main'
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
-function App() {
-  return (
-  	<Provider store={createStoreWithMiddleware(rootReducer)}>
-		<div className="grey lighten-3">
-			<Header/>
-			<div style={{ marginTop: '50px' }}>
-				<Router/>
+class App extends React.Component {
+
+	render(){
+		return (
+		<Provider store={createStoreWithMiddleware(rootReducer)}>
+			<div className="grey lighten-3">
+				<Main/>
 			</div>
-		</div>
-    </Provider>
-  );
+		</Provider>
+	);
+	}
 }
 
 export default App;

@@ -5,18 +5,22 @@ class Header extends React.Component {
 
 	state = {
 		show: true,
-		favo: true
+		favo: true,
+		search: ""
 	}
 
 	capValues = (e) =>{
 		if(e.target.value !== ""){
 			this.setState({
+				search: e.target.value,
 				show : false
-			})
+			})	
 		}else{
 			this.setState({
+				search: "",
 				show : true
-			})			
+			})
+			this.props.search()
 		}
 	}
 
@@ -24,6 +28,12 @@ class Header extends React.Component {
 		this.setState({
 			favo: this.state.favo ? false : true
 		})
+	}
+
+
+	search_characters_name = async (e) => {
+		e.preventDefault()
+		this.props.search(this.state.search)
 	}
 
 	render(){
@@ -50,8 +60,9 @@ class Header extends React.Component {
 			        <li className="icon-search">
 			        </li>		        
 		    	}
+
 		        <li>
-					<form autocomplete="off">
+					<form autocomplete="off" onSubmit={this.search_characters_name}>
 				        <div className="input-field col s12">
 				          <input onChange={this.capValues} name="search" id="icon_prefix" type="text" className="input-field validate border" placeholder="Buscar"/>
 				        </div>
@@ -69,11 +80,11 @@ class Header extends React.Component {
 			      		</a>
 				      </ul>
 		        </li>
-		      </ul>		  
+		      </ul>
 		  </nav>
+		  
 		)
 	}
 }
-
 
 export default Header

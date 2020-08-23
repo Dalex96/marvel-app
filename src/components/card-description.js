@@ -6,7 +6,7 @@ class CardDescription extends React.Component {
 	render(){
 		return (
 			<div className="col s12 m12" style={{padding: '0px'}}>
-			<a href={`/comic/${this.props.idComic}`}>
+			<a href={`/comic/${this.props.idComic}/${this.props.dataComic.title}`}>
 				<div className="card horizontal" style={{boxShadow: '0px 0px 0px black', margin:'5px'}}>
 					<div className="card-image">
 						<img src={`${this.props.dataComic.thumbnail.path}.${this.props.dataComic.thumbnail.extension}`} height="110" alt="description of image"/>
