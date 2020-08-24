@@ -31,7 +31,7 @@ class CardMarvel extends React.Component {
 					<a className="waves-light modal-trigger" onClick={this.buscarComics} href={`#modal${this.props.modal}`}>
 					<div className="card">
 						<div className="card-image">
-							<img className="" width="500" height="300" src={`${this.props.data.thumbnail.path}.${this.props.data.thumbnail.extension}`} alt="description of image"/>
+							<img className="" width="500" height="300" src={`${this.props.data.thumbnail.path}.${this.props.data.thumbnail.extension}`} alt="descriptionmarvel3"/>
 							<span className="card-title" style={{ fontSize: '15px', fontWeight: 'bold'}}>
 								{this.props.data.name}
 							</span>

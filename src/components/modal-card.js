@@ -1,7 +1,7 @@
 import React from 'react';
 import CardDescription from './card-description'
 import M from 'materialize-css'
-import './style.css'
+import '../styles/css/style-components.css'
 
 class ModalCard extends React.Component {
 

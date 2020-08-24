@@ -1,12 +1,26 @@
 import React from 'react';
-import { showComic } from "../store/actions";
+import Moment from 'moment';
+import { showComic, showComicURL } from "../store/actions";
 import { connect } from 'react-redux'
-import './style.css'
+import '../styles/css/style-pages.css'
+const GLOBAL = require("../state/index")
 
 class Description extends React.Component {
 
+	state = {
+		urlComic: "" 
+	}
+
 	componentDidMount(){
 		this.props.showComic(this.props.match.params.idComic)
+		setTimeout(() => {
+			this.props.comic[0].urls.map((res) => {
+				if(res.type === "detail"){
+					GLOBAL.URL_COMIC = res.url
+					this.setState({urlComic:res.url})
+				}
+			})
+		}, 1000);
 	}
 
 	render(){
@@ -14,11 +28,11 @@ class Description extends React.Component {
 			<div className="container margin-card-description">
 			  <div className="row">
 				{
-					this.props.comic.map(comic =>
-					<div className="col s12 m12 12 marginContent">
+					this.props.comic.map((comic, i) =>
+					<div key={i} className="col s12 m12 12 marginContent">
 						<div className="card horizontal horizontal-description" style={{boxShadow: '0px 0px 0px black'}}>
 							<div className="card-image">
-								<img className="" alt="description of image" src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}/>
+								<img className="" alt="descriptionmarvel2" src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}/>
 							</div>
 							<div className="card-stacked">
 								<div className="card-content">
@@ -26,10 +40,17 @@ class Description extends React.Component {
 										{comic.title}
 									</strong>
 									<div className="infoTarget">
-										<p><strong>Published: {comic.diamondCode}</strong></p>
 										{
-											comic.creators.items.map(creator => 
-												<p key={creator.available}><strong>{creator.role}: {creator.name}</strong></p>
+											comic.dates.map((date, i) =>
+												date.type === 'onsaleDate' ?
+												<p key={i}><strong>Published: {Moment(date.date).format('LL')}</strong></p>
+												:
+												<p key={i}><strong></strong></p>
+											)
+										}									
+										{
+											comic.creators.items.map((creator, i) => 
+												<p key={i}><strong>{creator.role}: {creator.name}</strong></p>
 											)
 										}
 									</div>
@@ -48,7 +69,8 @@ class Description extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	comic: state.comics.comic
+	comic: state.comics.comic,
+	comic_url: state.comics.comic_url
 })
 
-export default connect(mapStateToProps, { showComic })(Description)
+export default connect(mapStateToProps, { showComic, showComicURL })(Description)

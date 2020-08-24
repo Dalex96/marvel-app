@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'
+import '../styles/css/style-components.css'
 
 class CardDescription extends React.Component {
 
@@ -9,7 +9,7 @@ class CardDescription extends React.Component {
 			<a href={`/comic/${this.props.idComic}/${this.props.dataComic.title}`}>
 				<div className="card horizontal" style={{boxShadow: '0px 0px 0px black', margin:'5px'}}>
 					<div className="card-image">
-						<img src={`${this.props.dataComic.thumbnail.path}.${this.props.dataComic.thumbnail.extension}`} height="110" alt="description of image"/>
+						<img src={`${this.props.dataComic.thumbnail.path}.${this.props.dataComic.thumbnail.extension}`} height="110" alt="descriptionmarvel"/>
 					</div>
 					<div className="card-stacked">
 						<div className="card-content descriptionComic">
