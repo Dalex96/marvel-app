@@ -6,16 +6,15 @@ import {
 	SEARCH_CHARACTERS_NAME,
 	SHOW_COMIC_URL
 	 } from "./actionTypes";
+const md5 = require('md5');
 
 const URL = "http://gateway.marvel.com/v1/public"
 
-// const ts = '1597956652839'
-// const apikey = 'd5b1719a579b94096ec9f3cbe43f1632'
-// const hash = '1eb2a1a0be5fdec1e557ffd231a2c7b5'
-
-const ts = '1598043415595'
+const ts = Date.now()
 const apikey = 'c30944b1d19b13bd57de590123c1c6db'
-const hash = '8b6cd780009dac11f4cf25b6415b3632'
+const apikeyPrivate = 'dd9fd9d352259059b44c0dab0d207725290a86c0'
+const hash = md5(`${ts}${apikeyPrivate}${apikey}`)
+
 
 export function showCharacters(i){
 	return (dispatch, getState) => {
