@@ -18,10 +18,11 @@ class ModalCard extends React.Component {
 			<div>
 			  <div id={`modal${this.props.modal}`} className="modal disableScroll">
 			    <div className="modal-content">
-				      <a className="modal-close">
-				      	<i className="material-icons prefix" style={{position: 'absolute', left:'92%', bottom: '400px'}}>close</i>
-				      </a>
-			      <h5>{this.props.nameCharacter}
+			      <a className="modal-close" href={() => false}>
+			      	<i className="material-icons" id="iconCloseModal">close</i>
+			      </a>
+			      <h5>
+			      	{this.props.nameCharacter}
 			      </h5>
 			      <div className="row scrollhabilitado contentCard">
 					{

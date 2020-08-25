@@ -88,17 +88,17 @@ export function showComicURL(url){
 			    }
 			})
 			.then((res) => {
-				const extractScriptRegex = /<script\b[^>]*>([\s\S]*?)<\/script>/gmi;
-				let scriptsExtracted;
-				let innerHtml = res.data;
-				scriptsExtracted = extractScriptRegex.exec(res.data)
-				while(scriptsExtracted) {
-					innerHtml = innerHtml.replace(scriptsExtracted[0], '');
-					window.eval(scriptsExtracted[1]);
-				}
+				// const extractScriptRegex = /<script\b[^>]*>([\s\S]*?)<\/script>/gmi;
+				// let scriptsExtracted;
+				// let innerHtml = res.data;
+				// scriptsExtracted = extractScriptRegex.exec(res.data)
+				// while(scriptsExtracted) {
+				// 	innerHtml = innerHtml.replace(scriptsExtracted[0], '');
+				// 	window.eval(scriptsExtracted[1]);
+				// }
 				dispatch({
 					type: SHOW_COMIC_URL,
-					payload: innerHtml
+					payload: {}
 				})
 			})
 	}
