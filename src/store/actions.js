@@ -8,7 +8,7 @@ import {
 	 } from "./actionTypes";
 const md5 = require('md5');
 
-const URL = "http://gateway.marvel.com/v1/public"
+const URL = "https://gateway.marvel.com/v1/public"
 
 const ts = Date.now()
 const apikey = 'c30944b1d19b13bd57de590123c1c6db'
@@ -18,7 +18,6 @@ const hash = md5(`${ts}${apikeyPrivate}${apikey}`)
 
 export function showCharacters(i){
 	return (dispatch, getState) => {
-		console.log("Cargando Personajes...")
 		axios.get(`${URL}/characters`, {
 				params:{
 					'ts':ts,
@@ -29,7 +28,6 @@ export function showCharacters(i){
 				}
 			})
 			.then((res) => {
-				console.log("Personajes Cargados.")
 				dispatch({
 					type: SHOW_CHARACTERS,
 					payload: res.data.data.results
@@ -40,7 +38,6 @@ export function showCharacters(i){
 
 export function showComicsCharacter(id){
 	return (dispatch, getState) => {
-		console.log("Cargando Comics...")
 		axios.get(`${URL}/characters/${id}/comics`, {
 				params:{
 					'ts':ts,
@@ -49,7 +46,6 @@ export function showComicsCharacter(id){
 				}
 			})
 			.then((res) => {
-				console.log("Comics Cargados.")
 				dispatch({
 					type: SHOW_COMICS_CHARACTER,
 					payload: res.data.data.results
@@ -60,7 +56,6 @@ export function showComicsCharacter(id){
 
 export function showComic(id){
 	return (dispatch, getState) => {
-		console.log("Cargando Comic...")
 		axios.get(`${URL}/comics/${id}`, {
 				params:{
 					'ts':ts,
@@ -69,7 +64,6 @@ export function showComic(id){
 				}
 			})
 			.then((res) => {
-				console.log("Comic Cargado.")
 				dispatch({
 					type: SHOW_COMIC,
 					payload: res.data.data.results
@@ -106,7 +100,6 @@ export function showComicURL(url){
 export function searchCharacter(name){
 	if(name){
 	return (dispatch, getState) => {
-		console.log("Cargando Personaje Buscado...")
 		axios.get(`${URL}/characters`, {
 				params:{
 					'nameStartsWith':name,
@@ -118,7 +111,6 @@ export function searchCharacter(name){
 				}
 			})
 			.then((res) => {
-				console.log("Cargado Personaje Buscado.")
 				dispatch({
 					type: SEARCH_CHARACTERS_NAME,
 					payload: res.data.data.results
@@ -127,7 +119,6 @@ export function searchCharacter(name){
 	}
 	}else{
 		return (dispatch, getState) => {
-		console.log("Cargando Personajes...")
 		axios.get(`${URL}/characters`, {
 				params:{
 					'ts':ts,
@@ -138,7 +129,6 @@ export function searchCharacter(name){
 				}
 			})
 			.then((res) => {
-				console.log("Personajes Cargados.")
 				dispatch({
 					type: SEARCH_CHARACTERS_NAME,
 					payload: res.data.data.results
