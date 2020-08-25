@@ -27,3 +27,10 @@
 	margin:5px;
 }
 
+.preloader-wrapper{
+	left: 40%;
+}
+
+.spinner-red, .spinner-red-only {
+	border-color: red;
+}

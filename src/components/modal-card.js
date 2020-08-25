@@ -1,5 +1,6 @@
 import React from 'react';
 import CardDescription from './card-description'
+import Loading from "./loading";
 import M from 'materialize-css'
 import '../styles/css/style-components.css'
 
@@ -26,7 +27,10 @@ class ModalCard extends React.Component {
 			      </h5>
 			      <div className="row scrollhabilitado contentCard">
 					{
+						this.props.comics[0] ?
 						this.props.comics.map(comic => <CardDescription dataComic={comic} key={comic.id} idComic={comic.id}/>)
+						:
+						<Loading/>
 					}			      
 			      </div>
 			    </div>
