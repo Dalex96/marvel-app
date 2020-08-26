@@ -10,7 +10,8 @@ class Characters extends React.Component {
 	state = {
 		show: false,
 		charactersAll: [],
-		loading: true
+		loading: true,
+		favorites: []		
 	}
 
 	componentDidMount(){
@@ -18,8 +19,14 @@ class Characters extends React.Component {
 		this.props.showCharacters(i)
 		setTimeout(() => {
 			this.setState({loading: false})
+			// this.listFavorites()
 		}, 1000);		
 	}	
+
+	// listFavorites = () => {
+	// 	var favoritos = localStorage.getItem("favoritos") || "[]";
+	// 	this.setState({favorites: JSON.parse(favoritos)})
+	// }
 
 	render(){
 		return (
@@ -31,7 +38,9 @@ class Characters extends React.Component {
 					this.context[0] ?
 					this.context.map(character => <CardMarvel data={character} key={character.id} modal={character.id}/>)
 					:
-					this.props.characters.map(character => <CardMarvel data={character} key={character.id} modal={character.id}/>)
+					this.props.characters.map(character => 
+						<CardMarvel data={character} key={character.id} modal={character.id}/>
+					)
 				}
 			</div>			
 		)

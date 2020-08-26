@@ -7,17 +7,51 @@ import '../styles/css/style-components.css'
 class CardMarvel extends React.Component {
 
 	state = {
-		favoCard: false
+		favoCard: false,
+		favorites: []
+	}
+
+	componentDidMount(){
+		this.listFavorites()
 	}
 
 	favorite = () => {
+  		// leemos los datos clave del producto y los guardamos en un objeto
+		var datos = {
+			id: this.props.modal,
+			nombre: this.props.data.name
+		};
+
+		var favoritos = localStorage.getItem("favoritos") || "[]";
+		favoritos = JSON.parse(favoritos);
+
+		var posLista = favoritos.findIndex((e) => { return e.id === datos.id; });
+		if (posLista > -1) {
+			favoritos.splice(posLista, 1);
+		} else {
+			favoritos.push(datos);
+		}
+
+		localStorage.setItem("favoritos", JSON.stringify(favoritos));
 		this.setState({
-			favo: this.state.favoCard ? false : true
+			favoCard: this.state.favoCard ? false : true
 		})
+		this.listFavorites()
 	}
 
 	buscarComics = () =>{
 		this.props.showComicsCharacter(this.props.modal)
+	}
+
+	listFavorites = () => {
+		var favoritos = localStorage.getItem("favoritos") || "[]";
+		var favorites = JSON.parse(favoritos)
+		favorites.map( favo => {
+			if(this.props.modal === favo.id){
+				this.setState({favoCard: true})
+			}
+
+		})
 	}
 
 	render(){
@@ -26,22 +60,22 @@ class CardMarvel extends React.Component {
 				<ModalCard comics={this.props.comics_character} nameCharacter={this.props.data.name} modal={this.props.modal}/>
 				<div className="col s12 m6 l3">
 
-					<a className="waves-light modal-trigger" onClick={this.buscarComics} href={`#modal${this.props.modal}`}>
 					<div className="card">
 						<div className="card-image">
+					<a className="waves-light modal-trigger" onClick={this.buscarComics} href={`#modal${this.props.modal}`}>
 							<img className="imgCard" src={`${this.props.data.thumbnail.path}.${this.props.data.thumbnail.extension}`} alt="descriptionmarvel3"/>
 							<span className="card-title">
 								{this.props.data.name}
 							</span>
+					</a>
 				      	{
-				      		this.state.favoCard ?
-								<i id="iconStartCard" className="material-icons">star_border</i>								
+				      		!this.state.favoCard ?
+								<a href={() => false} onClick={this.favorite}><i id="iconStartCard" className="material-icons">star_border</i></a>
 					        :
-			    				<i id="iconStartCard" className="material-icons">star</i>
+			    				<a href={() => false} onClick={this.favorite}><i id="iconStartCard" className="material-icons">star</i></a>
 				      	}							
 						</div>
 					</div>
-					</a>
 				</div>
 			</div>
 		)
