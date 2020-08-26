@@ -26,7 +26,7 @@ class Characters extends React.Component {
 			<div className="row container">
 				{
 					this.state.loading ?
-					<Loading />
+					<Loading/>
 					:
 					this.context[0] ?
 					this.context.map(character => <CardMarvel data={character} key={character.id} modal={character.id}/>)

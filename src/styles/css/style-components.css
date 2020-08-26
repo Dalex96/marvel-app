@@ -1,151 +1,149 @@
+@charset "UTF-8";
 /*card description*/
-
-#imgCardDescription{
-	width: 70px;
-	height: 100px;
+#imgCardDescription {
+  width: 70px;
+  height: 100px;
 }
 
-#iconFav{
-	position: relative;
-	left:3px;
-	top: 6px;
+#loading{
+  margin-top: 30%; 
 }
 
-#cardShadowsHorizon{
-	box-shadow: 0px 0px 0px black; 
-	margin:5px;
+#iconFav {
+  position: relative;
+  left: 3px;
+  top: 6px;
 }
 
-.descriptionComic{
-	font-size: 12px;
-	text-overflow: ellipsis;
-	overflow: hidden;
+.descriptionComic {
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: black;
 }
+
 /*card*/
-
-#iconStartCard{
-	position: absolute; 
-	left: 70%;
-	bottom: 240px;
+#iconStartCard {
+  position: absolute;
+  left: 80%;
+  bottom: 260px;
+  color: white;
 }
 
-.imgCard{
-	width: 100%;
-	height: 300px;
+.imgCard {
+  width: 100%;
+  height: 300px;
 }
 
 .card .card-title {
-    font-size: 15px;
-    font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 /*modal card*/
+a {
+  color: inherit;
+}
 
-a { color: inherit; } 
-
-.card .card-content{
-	padding-top: 0px;
+.card .card-content {
+  padding-top: 0px;
 }
 
 .disableScroll {
-	overflow-y:hidden /* Ocultar scroll */
+  overflow-y: hidden;
 }
 
-.modal{
-	width: 40%;
-	height: 500px;
-	border-radius: 5px;
+.modal {
+  width: 40%;
+  height: 500px;
+  border-radius: 5px;
 }
 
 .contentCard {
-	margin-top:30px;
-	height: auto;
-	width: 100%;
-	padding-bottom: 30px;
+  margin-top: 30px;
+  height: auto;
+  width: 100%;
+  padding-bottom: 30px;
 }
 
 .scrollhabilitado {
-	overflow-y:scroll; /* Ocultar scroll */	
-	background-color: white;
-	height:350px;
+  overflow-y: scroll;
+  /* Ocultar scroll */
+  background-color: white;
+  height: 350px;
 }
 
 .scrollhabilitado::-webkit-scrollbar {
-    width: 5px;     /* Tamaño del scroll en vertical */
-    height: 5px;    /* Tamaño del scroll en horizontal */
-    border-radius: 100px;
+  width: 5px;
+  /* Tamaño del scroll en vertical */
+  height: 5px;
+  /* Tamaño del scroll en horizontal */
+  border-radius: 100px;
 }
 
 .scrollhabilitado::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 20px;
+  background: #ccc;
+  border-radius: 20px;
 }
+
 /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
 .scrollhabilitado::-webkit-scrollbar-thumb:hover {
-    background: #343434;
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  background: #343434;
 }
+
 /* Cambiamos el fondo cuando esté en active */
 .scrollhabilitado::-webkit-scrollbar-thumb:active {
-    background-color: #343434;
+  background-color: #343434;
 }
+
 /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
-
-
-#iconCloseModal{
-	position: absolute;
-	left:85%;
-	bottom: 400px;
-}
-.prefix {
-	color: #A8A8A8;
-	margin-right: 0px;
+#iconCloseModal {
+  position: absolute;
+  left: 85%;
+  bottom: 400px;
 }
 
 @media only screen and (max-width: 1440px) {
-	/*modal*/
+  /*modal*/
+  .modal {
+    width: 40%;
+    height: 500px;
+    border-radius: 5px;
+  }
 
-	.modal{
-		width: 40%;
-		height: 500px;
-		border-radius: 5px;
-	}
-	#iconCloseModal{
-		left:91%;
-	}
+  #iconCloseModal {
+    left: 91%;
+  }
 
-	/*card description*/
-	
+  /*card description*/
 }
-
 @media only screen and (max-width: 1024px) {
-	/*modal*/
+  /*modal*/
+  .modal {
+    width: 55%;
+    height: 500px;
+    border-radius: 5px;
+  }
 
-	.modal{
-		width: 55%;
-		height: 500px;
-		border-radius: 5px;
-	}
-	#iconCloseModal{
-		left:90%;
-	}
+  #iconCloseModal {
+    left: 90%;
+  }
 
-	/*card description*/
-
-
+  /*card description*/
 }
-
 @media only screen and (max-width: 600px) {
-	/*modal*/
-	.modal{
-		width: 70%;
-		height: 500px;
-		border-radius: 5px;
-	}
-	#iconCloseModal{
-		left:90%;
-	}
+  /*modal*/
+  .modal {
+    width: 70%;
+    height: 500px;
+    border-radius: 5px;
+  }
 
-	/*card description*/
+  #iconCloseModal {
+    left: 90%;
+  }
+
+  /*card description*/
 }
 
+/*# sourceMappingURL=style-components.css.map */

@@ -1,3 +1,7 @@
+$shadowColor: black;
+$SpinnerColor: red;
+$NotShadow: 0px 0px 0px $shadowColor;
+
 .contentCard-description {
 	padding: 20px;
 }
@@ -23,7 +27,7 @@
 }
 
 #cardShadowsHorizon{
-	box-shadow: 0px 0px 0px black; 
+	box-shadow: $NotShadow; 
 	margin:5px;
 }
 
@@ -34,5 +38,5 @@
 }
 
 .spinner-red, .spinner-red-only {
-	border-color: red;
+	border-color: $SpinnerColor;
 }

@@ -10,9 +10,6 @@ class CardMarvel extends React.Component {
 		favoCard: false
 	}
 
-	componentDidMount(){
-	}
-
 	favorite = () => {
 		this.setState({
 			favo: this.state.favoCard ? false : true
@@ -38,9 +35,9 @@ class CardMarvel extends React.Component {
 							</span>
 				      	{
 				      		this.state.favoCard ?
-								<i id="iconStartCard" className="material-icons prefix card-title">star_border</i>								
+								<i id="iconStartCard" className="material-icons">star_border</i>								
 					        :
-			    				<i id="iconStartCard" className="material-icons prefix card-title">star</i>
+			    				<i id="iconStartCard" className="material-icons">star</i>
 				      	}							
 						</div>
 					</div>

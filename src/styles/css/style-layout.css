@@ -1,185 +1,181 @@
 /*header*/
-
-#urlComicMarvel{
-    width:100%;
-    text-overflow: ellipsis;
-    overflow:hidden;
-    white-space:nowrap;
-    color: black;
+#urlComicMarvel {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
 }
 
-#LiComicMarvel{
-    width:100%;
-    text-overflow: ellipsis;
-    overflow:hidden;
-    white-space:nowrap;
+#LiComicMarvel {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-#imglogo{
-    width: 70px;
-    margin-top: 12%;
-    margin-left:10px;
-    margin-right:20px;
+#imglogo {
+  width: 70px;
+  margin-top: 12%;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 .input-field .prefix {
-    color: #A8A8A8;
+  color: #A8A8A8;
 }
+
 .prefixHeader {
-    color: #A8A8A8;
-    margin-right: 50px;
+  color: #A8A8A8;
+  margin-right: 50px;
 }
-.icon-search{
-    width: 40px;
-    /*margin-left: 20px;*/
+
+.prefix {
+  color: #A8A8A8;
+}
+
+.icon-search {
+  width: 40px;
 }
 
 /* label underline focus color */
 .input-field input:focus {
-    border-bottom: 1px solid red !important;
-    box-shadow: 0 1px 0 0 red !important
+  border-bottom: 1px solid red !important;
+  box-shadow: 0 1px 0 0 red !important;
 }
 
 @media only screen and (max-width: 1440px) {
-    .prefixHeader {
-        color: #A8A8A8;
-        margin-right: 50px;
-    }
+  .prefixHeader {
+    margin-right: 50px;
+  }
 
-    #imglogo{
-        width: 70px;
-        margin-top: 12%;
-        margin-left:10px;
-        margin-right:20px;
-    }
+  #imglogo {
+    width: 70px;
+    margin-top: 12%;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
 
-    #urlComicMarvel{
-        width:83%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }
+  #urlComicMarvel {
+    width: 83%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
-    #LiComicMarvel{
-        width:83%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }        
-    
+  #LiComicMarvel {
+    width: 83%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
-
 @media only screen and (max-width: 1120px) {
-    .prefixHeader {
-        color: #A8A8A8;
-        margin-right: 50px;
-    }
+  .prefixHeader {
+    margin-right: 50px;
+  }
 
-    #imglogo{
-        width: 60px;
-        margin-top: 20%;
-        margin-left:0px;
-        margin-right:10px;
-    }
+  #imglogo {
+    width: 60px;
+    margin-top: 20%;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
 
-    #urlComicMarvel{
-        width:75%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }
+  #urlComicMarvel {
+    width: 75%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
-    #LiComicMarvel{
-        width:75%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }
-
+  #LiComicMarvel {
+    width: 75%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
-
 @media only screen and (max-width: 800px) {
-    #urlComicMarvel{
-        width:70%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }
+  #urlComicMarvel {
+    width: 70%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
-    #LiComicMarvel{
-        width:70%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }        
-    
+  #LiComicMarvel {
+    width: 70%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
-
 @media only screen and (max-width: 650px) {
-    .prefixHeader {
-        color: #A8A8A8;
-        margin-right: 5px;
-        padding: 0px;
-    }
-    .ocultar-div{
-        display:none;
-    }
+  .prefixHeader {
+    margin-right: 5px;
+    padding: 0px;
+  }
 
-    #imglogo{
-        width: 60px;
-        margin-top: 16%;
-        margin-left:0px;
-        margin-right:10px;
-    }
+  .ocultar-div {
+    display: none;
+  }
 
-    #urlComicMarvel{
-        width:68%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }
+  #imglogo {
+    width: 60px;
+    margin-top: 16%;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
 
-    #LiComicMarvel{
-        width:68%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }        
-    
+  #urlComicMarvel {
+    width: 68%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  #LiComicMarvel {
+    width: 68%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
-
 @media only screen and (max-width: 452px) {
-    .prefixHeader {
-        color: #A8A8A8;
-        margin-right: 5px;
-        padding: 0px;
-    }
-    .ocultar-div{
-        display:none;
-    }
+  .prefixHeader {
+    margin-right: 5px;
+    padding: 0px;
+  }
 
-    #imglogo{
-        width: 60px;
-        margin-top: 16%;
-        margin-left:0px;
-        margin-right:10px;
-    }
-    .input-field{
-        width: 120px;
-    }
+  .ocultar-div {
+    display: none;
+  }
 
-    #urlComicMarvel{
-        width:62%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }
+  #imglogo {
+    width: 60px;
+    margin-top: 16%;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
 
-    #LiComicMarvel{
-        width:62%;
-        text-overflow: ellipsis;
-        overflow:hidden;
-        white-space:nowrap;
-    }        
-    
+  .input-field {
+    width: 120px;
+  }
+
+  #urlComicMarvel {
+    width: 62%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  #LiComicMarvel {
+    width: 62%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
+
+/*# sourceMappingURL=style-layout.css.map */

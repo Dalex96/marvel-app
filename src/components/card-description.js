@@ -13,11 +13,11 @@ class CardDescription extends React.Component {
 					</div>
 					<div className="card-stacked">
 						<div className="card-content descriptionComic">
-							<strong className="">
+							<strong>
 							{this.props.dataComic.title}
 							<i className="material-icons prefix" id="iconFav">star_border</i>
 							</strong>
-							<p className="">
+							<p>
 								{this.props.dataComic.description}
 							</p>
 						</div>
