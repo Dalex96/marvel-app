@@ -16,22 +16,15 @@ class CardMarvel extends React.Component {
 	}
 
 	favorite = () => {
-  		// leemos los datos clave del producto y los guardamos en un objeto
-		var datos = {
-			id: this.props.modal,
-			nombre: this.props.data.name
-		};
-
+		var datos = this.props.data
 		var favoritos = localStorage.getItem("favoritos") || "[]";
 		favoritos = JSON.parse(favoritos);
-
 		var posLista = favoritos.findIndex((e) => { return e.id === datos.id; });
 		if (posLista > -1) {
 			favoritos.splice(posLista, 1);
 		} else {
 			favoritos.push(datos);
 		}
-
 		localStorage.setItem("favoritos", JSON.stringify(favoritos));
 		this.setState({
 			favoCard: this.state.favoCard ? false : true

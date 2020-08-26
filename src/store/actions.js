@@ -3,8 +3,7 @@ import {
 	SHOW_CHARACTERS,
 	SHOW_COMICS_CHARACTER,
 	SHOW_COMIC,
-	SEARCH_CHARACTERS_NAME,
-	SHOW_COMIC_URL
+	SEARCH_CHARACTERS_NAME
 	 } from "./actionTypes";
 const md5 = require('md5');
 
@@ -67,31 +66,6 @@ export function showComic(id){
 				dispatch({
 					type: SHOW_COMIC,
 					payload: res.data.data.results
-				})
-			})
-	}
-}
-
-
-export function showComicURL(url){
-	return (dispatch, getState) => {
-		axios.get(url, {
-			    headers: { 
-			      	'Access-Control-Allow-Origin': '*'
-			    }
-			})
-			.then((res) => {
-				// const extractScriptRegex = /<script\b[^>]*>([\s\S]*?)<\/script>/gmi;
-				// let scriptsExtracted;
-				// let innerHtml = res.data;
-				// scriptsExtracted = extractScriptRegex.exec(res.data)
-				// while(scriptsExtracted) {
-				// 	innerHtml = innerHtml.replace(scriptsExtracted[0], '');
-				// 	window.eval(scriptsExtracted[1]);
-				// }
-				dispatch({
-					type: SHOW_COMIC_URL,
-					payload: {}
 				})
 			})
 	}

@@ -5,10 +5,6 @@ import '../styles/css/style-components.css'
 
 class ModalCard extends React.Component {
 
-	state = {
-		load: true
-	}
-
 	componentDidMount(){
 		M.AutoInit()	
 	}

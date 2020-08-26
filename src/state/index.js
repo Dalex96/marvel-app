@@ -1,4 +1,3 @@
 module.exports = {
-  URL_COMIC: '',
-  DATA: [],
+  URL_COMIC: ''
 };

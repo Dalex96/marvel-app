@@ -1,17 +1,16 @@
 import React from 'react';
-import SearchCharactersByName from "../context/index"
+import { ContextCharacters } from "../context/index"
+import ProvideCombinedContext from "../context/contextCombine"
 import { showCharacters } from "../store/actions";
 import { connect } from 'react-redux'
 import CardMarvel from "../components/card";
 import Loading from "../components/loading";
 
-class Characters extends React.Component {
-	static contextType = SearchCharactersByName;
+class CharactersContext extends React.Component {
+	static contextType = ContextCharacters;
 	state = {
 		show: false,
-		charactersAll: [],
-		loading: true,
-		favorites: []		
+		loading: true
 	}
 
 	componentDidMount(){
@@ -19,33 +18,44 @@ class Characters extends React.Component {
 		this.props.showCharacters(i)
 		setTimeout(() => {
 			this.setState({loading: false})
-			// this.listFavorites()
 		}, 1000);		
 	}	
 
-	// listFavorites = () => {
-	// 	var favoritos = localStorage.getItem("favoritos") || "[]";
-	// 	this.setState({favorites: JSON.parse(favoritos)})
-	// }
-
 	render(){
 		return (
+			<div>
 			<div className="row container">
 				{
 					this.state.loading ?
-					<Loading/>
+						<Loading/>
 					:
-					this.context[0] ?
-					this.context.map(character => <CardMarvel data={character} key={character.id} modal={character.id}/>)
-					:
-					this.props.characters.map(character => 
-						<CardMarvel data={character} key={character.id} modal={character.id}/>
-					)
+						!this.context.FavCharacters[0] ?
+							this.context.SearchCharactersByName[0] ?
+								this.context.SearchCharactersByName.map(character => 
+									<CardMarvel data={character} key={character.id} modal={character.id}/>
+								)
+							:
+							this.props.characters.map(character => 
+								<CardMarvel data={character} key={character.id} modal={character.id}/>
+							)
+						:
+						this.context.FavCharacters.map(FavCharacter => 
+							<CardMarvel data={FavCharacter} key={FavCharacter.id} modal={FavCharacter.id}/>
+						)
 				}
+			</div>			
 			</div>			
 		)
 	}
 }
+
+const Characters = props => {
+  return (
+    <ProvideCombinedContext>
+      <CharactersContext {...props} />
+    </ProvideCombinedContext>
+  );
+};
 
 const mapStateToProps = state => ({
 	characters: state.characters.characters

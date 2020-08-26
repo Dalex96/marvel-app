@@ -1,7 +1,5 @@
 import React from 'react';
 
-const SearchCharactersByName = React.createContext({
-	characters: []
-});
-
-export default SearchCharactersByName;
+export const SearchCharactersByName = React.createContext({});
+export const FavCharacters = React.createContext({});
+export const ContextCharacters = React.createContext({});

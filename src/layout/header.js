@@ -36,6 +36,7 @@ class Header extends React.Component {
 		this.setState({
 			favo: this.state.favo ? false : true
 		})
+		this.props.fav(this.state.favo)
 	}
 
 
@@ -55,30 +56,38 @@ class Header extends React.Component {
 		        </li>
 	    		</a>
 		        {
-			        this.state.url === "" ?
-			        this.state.show ?
-				        <li className="icon-search ocultar-div">
-					        <i className="material-icons prefix">search</i>
-				        </li>
-			        :
+		        	
+				        this.state.url === "" ?
+					        this.state.show ?
+						        this.state.favo ?
+						        <li className="icon-search ocultar-div">
+							        <i className="material-icons prefix">search</i>
+						        </li>
+	        			     	:
+			     				<li></li>
+				        	:
 
-				        <li className="icon-search">
-				        </li>
-				    :
-				     <li id="LiComicMarvel"><a id="urlComicMarvel" href={this.state.url} rel="noopener noreferrer" target="_blank">{this.state.url}</a> </li>
+					        <li className="icon-search">
+					        </li>
+					    :
+				     	<li id="LiComicMarvel"><a id="urlComicMarvel" href={this.state.url} rel="noopener noreferrer" target="_blank">{this.state.url}</a> </li>
+
 
 		    	}
 
 		        <li>
 		        {
-		        	this.state.url === "" ?
-					<form className="col s12" autoComplete="off" onSubmit={this.search_characters_name}>
-				        <div className="input-field col s12">
-				          <input onChange={this.capValues} name="search" id="icon_prefix" type="text" className="input-field validate border" placeholder="Buscar"/>
-				        </div>
-				    </form>
-				    :
-				    <p></p>
+			        this.state.favo ?
+			        	this.state.url === "" ?
+						<form className="col s12" autoComplete="off" onSubmit={this.search_characters_name}>
+					        <div className="input-field col s12">
+					          <input onChange={this.capValues} name="search" id="icon_prefix" type="text" className="input-field validate border" placeholder="Buscar"/>
+					        </div>
+					    </form>
+					    :
+				    	<p></p>
+					:
+					<p></p> 	
 		        }
 		        </li>
 		        <li className="right">

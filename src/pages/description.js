@@ -1,14 +1,15 @@
 import React from 'react';
 import Moment from 'moment';
-import { showComic, showComicURL } from "../store/actions";
+import { showComic } from "../store/actions";
 import { connect } from 'react-redux'
 import '../styles/css/style-pages.css'
+
 const GLOBAL = require("../state/index")
 
 class Description extends React.Component {
 
 	state = {
-		urlComic: "" 
+		urlComic: ""
 	}
 
 	componentDidMount(){
@@ -76,4 +77,4 @@ const mapStateToProps = state => ({
 	comic_url: state.comics.comic_url
 })
 
-export default connect(mapStateToProps, { showComic, showComicURL })(Description)
+export default connect(mapStateToProps, { showComic })(Description)
