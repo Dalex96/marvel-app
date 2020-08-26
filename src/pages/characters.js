@@ -39,8 +39,8 @@ class CharactersContext extends React.Component {
 								<CardMarvel data={character} key={character.id} modal={character.id}/>
 							)
 						:
-						this.context.FavCharacters.map(FavCharacter => 
-							<CardMarvel data={FavCharacter} key={FavCharacter.id} modal={FavCharacter.id}/>
+						this.context.FavCharacters.map((FavCharacter, i) => 
+							<CardMarvel data={FavCharacter} key={i} modal={FavCharacter.id}/>
 						)
 				}
 			</div>			
