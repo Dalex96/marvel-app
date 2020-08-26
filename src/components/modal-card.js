@@ -30,7 +30,7 @@ class ModalCard extends React.Component {
 						this.props.comics[0] ?
 						this.props.comics.map(comic => <CardDescription dataComic={comic} key={comic.id} idComic={comic.id}/>)
 						:
-						<Loading />
+						<p></p>
 					}			      
 			      </div>
 			    </div>
