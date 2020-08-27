@@ -4,7 +4,7 @@
 
 Pequeña aplicación para mostrar los personajes e información sobre los comics donde aparecen
 
-## Script
+## Scripts
 
 
 ### `npm run dev`
