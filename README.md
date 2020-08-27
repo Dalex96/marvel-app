@@ -1,10 +1,10 @@
-DEMO: [https://challenge-marvel.herokuapp.com/](https://challenge-marvel.herokuapp.com/).
+### `DEMO:` [https://challenge-marvel.herokuapp.com/](https://challenge-marvel.herokuapp.com/).
 
 ## Challenge Marvel
 
 Pequeña aplicación para mostrar los personajes e información sobre los comics donde aparecen
 
-## Scrips
+## Script
 
 
 ### `npm run dev`
